@@ -32,7 +32,7 @@ with open(path) as csvfile:
     for index, row in enumerate(data):
         #skip header row
         if index == 0 :
-            pass
+            csv_header = row
         else:
 
             #first column is the date
@@ -73,23 +73,26 @@ with open(path) as csvfile:
 
     avg_change_pnl = total_change_pnl / (total_months-1)
 
-    results = (f'''
-          Financial Analysis
-          --------------------------
-          Total Months: {total_months}
-          Total: {format_as_currency(net_pnl)}
-          Average Change: {format_as_currency(avg_change_pnl)}
-          Greatest Increase in Profits: {greatest_increase_date} ({format_as_currency(greatest_increase_pnl)})
-          Greatest Decrease in Profits: {greatest_decrease_date} ({format_as_currency(greatest_decrease_pnl)})
-          
-          ''')
+
+#format results as an F-string
+results = (f'''Financial Analysis
+--------------------------
+Total Months: {total_months}
+Total: {format_as_currency(net_pnl)}
+Average Change: {format_as_currency(avg_change_pnl)}
+Greatest Increase in Profits: {greatest_increase_date} ({format_as_currency(greatest_increase_pnl)})
+Greatest Decrease in Profits: {greatest_decrease_date} ({format_as_currency(greatest_decrease_pnl)})
+''')
+
+#print results to terminal
+print(results)
     
-    #print results to terminal
-    print(results)
-    
-    #export results as txt
-    with open("Analysis",'w') as f:
-        f.write(results)
+#output path
+output_path = os.path.join(dirname,'Analysis.txt')
+
+#export results as txt
+with open(output_path,'w') as f:
+    f.write(results)
 
 
 
