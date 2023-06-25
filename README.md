@@ -7,15 +7,17 @@ By: Nathaniel Mizzell
 File Structure:
 
 PyBank
-  Reources
-    budget_data.csv (input file)
-  Analysis.txt (output file)
-  main.py (main body of code for PyBank)
+>Analysis.txt (output file)\
+>main.py (main body of code for PyBank)\
+>Resources
+>>budget_data.csv (input file)
 
+\
 PyPoll
-  Reources
-    election_data.csv (input file)
-  Analysis.txt (output file)
-  main.py (main body of code for PyPoll)
+>Analysis.txt (output file)\
+>main.py (main body of code for PyPoll)\
+>Resources
+>>election_data.csv (input file)
+
 
 
